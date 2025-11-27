@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  api:
+    image: express-load-test:latest
+    ports:
+      - "3003:3003"
+    deploy:
+      replicas: 3        # start with 3 backend replicas
+      restart_policy:
+        condition: any
